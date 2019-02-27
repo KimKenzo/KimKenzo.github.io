@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+<style>
+body {
+  font-family: 'Dancing Script', cursive;;
+  margin: 0 auto;
+  max-width: 600px;
+  background:#99999999;
+}
+div {
+  height: 300px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: #abff;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: black;
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(255,25,255,1);
+  background: white;
+  background: linear-gradient(bottom, rgba(80,50,0,1), rgba(80,50,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(80,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first{
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/91mOOSKOpxL._SX425_.jpg");
+  background-size: 100% 100%;
+  height: 300px;
+}
+.second{
+  background-image: url("https://www.mainelobsternow.com/images/14-ounce-maine-lobster-tails.jpg");
+  background-size: 100% 100%;
+  height: 300px;
+}
+.dessert{
+  background-image: url("https://www.mychicagosteak.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/i/filet-2-2017.jpg");
+  background-size: 100% 100%;
+  height: 300px;
+}
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+  ul {
+      padding: 10px;
+      background: rgba(60,1101,2,0.8);
+      text-align: center;
+    
+    }
+    li {
+      display: inline;
+      padding: px 10px 1px 10px;
+      background: #111
+    }
+    
+</style>
+
+</head>
+
+<body>
+
+<ul>
+      <li><button onclick=Appetizer()>Appetizer</button></li>
+      <li><button onclick=Dinner()>Dinner</button></li>
+      <li><button onclick=Dessert()>Dessert</button></li>
+    </ul>
+    
+<h1>Kimberly's Cuisine</h1>
+<h2>New York's City Best Eatery</h2>
+
+
+<div id="resturant"></div>
+
+<script>
+AppetizerImages = [
+  'url("https://images-na.ssl-images-amazon.com/images/I/91mOOSKOpxL._SX425_.jpg")',
+  'url("https://www.mainelobsternow.com/images/14-ounce-maine-lobster-tails.jpg")',
+  'url("https://www.mychicagosteak.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/i/filet-2-2017.jpg")',
+]
+
+AppetizerDivs = [
+  '<div class="item"><p>Steamed Crab <span class="price">$14</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item"><p>Lobstr Tail <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item"><p>Filet Minon <span class="price">$8</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+]
+
+DinnerImages = [
+  'url("https://www.thefoodiewhisperer.com/wp-content/uploads/2016/04/IMG_0879.jpg")',
+  'url("http://cdn.shopify.com/s/files/1/1349/1385/products/dreamstime_m_10138460_grande.jpg?v=1467380397")',
+  'url("http://res.cloudinary.com/sagacity/image/upload/c_crop,h_1200,w_1600,x_0,y_0/c_scale,w_1080/v1396551777/IMG_2452_o1jand.jpg")',
+]
+
+DinnerDivs = [
+  '<div class="item"><p>Steamed Crawfish<span class="price">$14</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item"><p>Raw Squid Tai <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item"><p>Freshwater Oysters <span class="price">$8</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+]
+
+DessertImages = [
+  'url("https://timeincsecure-a.akamaihd.net/rtmp_uds/474428695/201709/2582/474428695_5579879045001_5579617529001-vs.jpg?pubId=474428695&videoId=5579617529001")',
+  'url("https://www.tasteofhome.com/wp-content/uploads/2017/10/Angel-Strawberry-Dessert_exps32651_CX952288B12_21_2b_RMS-1.jpg")',
+  'url("https://crackerbarrel.com/-/media/CrackerBarrel/Menu/Desserts/Coca_Cola_Cake_780x390.jpg?h=390&w=780&la=en&hash=A6DEC82403976C889CBACBB769A29C4F926E1C20")',
+]
+
+DessertDivs = [
+  '<div class="item"><p>Chocolate IceCream Fudge Cake <span class="price">$14</span><br /><small>Mustard sierra leone bologi. </small></p></div>',
+			'<div class="item"><p>Strawberry Short Cake <span class="price">$22</span><br /><small>Tri-tip capicola kielbasa bresaola. </small></p></div>',
+			'<div class="item"><p>Coco Cream Cake <span class="price">$8</span><br /><small>Lollipop ice cream candy canes.</small></p></div>',
+]
+
+
+
+function Appetizer() {
+  yummy = document.getElementById("resturant")
+  yummy.innerHTML = ''
+	yummy.innerHTML += AppetizerDivs[0]
+  yummy.innerHTML += AppetizerDivs[1]
+  yummy.innerHTML += AppetizerDivs[2]
+  items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = AppetizerImages[i]
+		items[i].style.backgroundSize = '100% 100%'
+  }  
+}
+
+function Dinner() {
+  yummy = document.getElementById("resturant")
+  yummy.innerHTML = ''
+	yummy.innerHTML += DinnerDivs[0]
+  yummy.innerHTML += DinnerDivs[1]
+  yummy.innerHTML += DinnerDivs[2]
+  items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = DinnerImages[i]
+		items[i].style.backgroundSize = '100% 100%'
+  } 
+}
+
+function Dessert() {
+  yummy = document.getElementById("resturant")
+  yummy.innerHTML = ''
+	yummy.innerHTML += DessertDivs[0]
+  yummy.innerHTML += DessertDivs[1]
+  yummy.innerHTML += DessertDivs[2]
+  items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = DessertImages[i]
+		items[i].style.backgroundSize = '100% 100%'
+  }  
+}
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+</body>
