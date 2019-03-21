@@ -256,14 +256,13 @@ h3.txt-tl {
 /****/
 
 .parallax {
-  /*background-attachment: fixed;*/
-  /*background-repeat: repeat-y;*/
-  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-repeat: repeat-y;
   background-position: center center;
 }
 
 .bg-image-2 {
-  background: url('https://static.wixstatic.com/media/35320c_6658a42f407b49d1a076a05cc08882fe~mv2_d_4096_3286_s_4_2.jpg') no-repeat center fixed;
+  background: url('https://static.wixstatic.com/media/35320c_6658a42f407b49d1a076a05cc08882fe~mv2_d_4096_3286_s_4_2.jpg') no-repeat center;
   -webkit-background-size: 100% auto;
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
