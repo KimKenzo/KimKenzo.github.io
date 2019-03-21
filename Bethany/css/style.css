@@ -272,6 +272,11 @@ h3.txt-tl {
   -o-background-size: cover;
   background-size: cover;
 }
+@media (min-width: 750px) {
+	.bg-image-2 {
+		background-attachment: fixed;
+	}
+}
 
 .section {
   position: relative;
