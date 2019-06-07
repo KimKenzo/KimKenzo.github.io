@@ -70,7 +70,8 @@ for (i=0; i<leah; i=i+1) {
   text("time:"+time.toFixed(0), 80,70)
   
   
-  
+if (touches.length == 0)   {
+
     if (keyIsDown(LEFT_ARROW)) {
     kim = kim - 15
   }
@@ -83,6 +84,12 @@ for (i=0; i<leah; i=i+1) {
     if (keyIsDown(UP_ARROW)) {
     kobe = kobe - 15
   }
+}
+	  else { 
+		kim = touches[0].x
+		kobe = touches[0].y
+}
+
   if ( y > height) {
 	direction=direction*-1
     
