@@ -4,6 +4,10 @@ html, body {
   position: fixed; 
 	overflow: hidden; 
   overscroll-behavior: none;
+	#zodiac, #zodiac input, button {
+	font-size: 120%;
+}
+
 }
 canvas {
   display: block;
